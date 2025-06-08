@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Shield, 
   ShoppingCart, 
@@ -13,7 +13,7 @@ import {
   Heart,
   Zap
 } from 'lucide-react';
-import { GameCard, mockPlayer } from './components';
+import { GameCard, mockPlayer, mockCards } from './components';
 
 // Mock Data for additional screens
 const mockDecks = [
