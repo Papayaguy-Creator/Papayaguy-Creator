@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 
 // Mock Data
-const mockPlayer = {
+export const mockPlayer = {
   name: "Royal Player",
   level: 13,
   trophies: 5247,
@@ -30,7 +30,7 @@ const mockPlayer = {
   gold: 15640
 };
 
-const mockCards = [
+export const mockCards = [
   // Common Cards
   { id: 1, name: "Barbarians", type: "Troop", rarity: "Common", elixir: 5, level: 13, count: 1847, maxCount: 2000, image: "https://images.pexels.com/photos/14468417/pexels-photo-14468417.jpeg" },
   { id: 2, name: "Archers", type: "Troop", rarity: "Common", elixir: 3, level: 13, count: 1654, maxCount: 2000, image: "https://images.pexels.com/photos/20161750/pexels-photo-20161750.jpeg" },
