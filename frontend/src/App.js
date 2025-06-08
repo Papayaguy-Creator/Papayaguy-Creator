@@ -1,52 +1,61 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import { motion, AnimatePresence } from 'framer-motion';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+// Import all components
+import { 
+  Navigation, 
+  HomeScreen, 
+  BattleScreen, 
+  CardsScreen 
+} from './components';
 
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
+import { 
+  DeckScreen, 
+  ShopScreen, 
+  ClanScreen 
+} from './components2';
+
+function App() {
+  const [activeScreen, setActiveScreen] = useState('home');
+
+  const renderScreen = () => {
+    switch (activeScreen) {
+      case 'home':
+        return <HomeScreen setActiveScreen={setActiveScreen} />;
+      case 'battle':
+        return <BattleScreen />;
+      case 'cards':
+        return <CardsScreen />;
+      case 'deck':
+        return <DeckScreen />;
+      case 'shop':
+        return <ShopScreen />;
+      case 'clan':
+        return <ClanScreen />;
+      default:
+        return <HomeScreen setActiveScreen={setActiveScreen} />;
     }
   };
 
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
   return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="App min-h-screen bg-gray-900 font-bold overflow-hidden">
+      {/* Screen Content */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeScreen}
+          initial={{ opacity: 0, x: 300 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -300 }}
+          transition={{ duration: 0.3 }}
+          className="relative z-10"
         >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+          {renderScreen()}
+        </motion.div>
+      </AnimatePresence>
 
-function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      {/* Bottom Navigation */}
+      <Navigation activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
     </div>
   );
 }
