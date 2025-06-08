@@ -69,20 +69,7 @@ const mockClanMembers = [
   { name: "WizardFan", role: "Member", trophies: 4789, level: 12, donations: 756 }
 ];
 
-const mockCards = [
-  { id: 1, name: "Barbarians", type: "Troop", rarity: "Common", elixir: 5, level: 13, count: 1847, maxCount: 2000, image: "https://images.pexels.com/photos/14468417/pexels-photo-14468417.jpeg" },
-  { id: 2, name: "Archers", type: "Troop", rarity: "Common", elixir: 3, level: 13, count: 1654, maxCount: 2000, image: "https://images.pexels.com/photos/20161750/pexels-photo-20161750.jpeg" },
-  { id: 3, name: "Knight", type: "Troop", rarity: "Common", elixir: 3, level: 13, count: 1789, maxCount: 2000, image: "https://images.unsplash.com/photo-1460194436988-671f763436b7" },
-  { id: 4, name: "Goblins", type: "Troop", rarity: "Common", elixir: 2, level: 13, count: 1234, maxCount: 2000, image: "https://images.pexels.com/photos/29856799/pexels-photo-29856799.jpeg" },
-  { id: 5, name: "Arrows", type: "Spell", rarity: "Common", elixir: 3, level: 13, count: 1567, maxCount: 2000, image: "https://images.pexels.com/photos/7978766/pexels-photo-7978766.jpeg" },
-  { id: 6, name: "Giant", type: "Troop", rarity: "Rare", elixir: 5, level: 11, count: 245, maxCount: 400, image: "https://images.pexels.com/photos/10547072/pexels-photo-10547072.jpeg" },
-  { id: 7, name: "Wizard", type: "Troop", rarity: "Rare", elixir: 5, level: 11, count: 198, maxCount: 400, image: "https://images.pexels.com/photos/7978816/pexels-photo-7978816.jpeg" },
-  { id: 8, name: "Fireball", type: "Spell", rarity: "Rare", elixir: 4, level: 11, count: 167, maxCount: 400, image: "https://images.pexels.com/photos/8391393/pexels-photo-8391393.jpeg" },
-  { id: 9, name: "Baby Dragon", type: "Troop", rarity: "Epic", elixir: 4, level: 8, count: 34, maxCount: 50, image: "https://images.pexels.com/photos/32418643/pexels-photo-32418643.jpeg" },
-  { id: 10, name: "Lightning", type: "Spell", rarity: "Epic", elixir: 6, level: 8, count: 28, maxCount: 50, image: "https://images.unsplash.com/photo-1634409884980-a30da0b2b010" },
-  { id: 11, name: "Princess", type: "Troop", rarity: "Legendary", elixir: 3, level: 5, count: 3, maxCount: 5, image: "https://images.unsplash.com/photo-1524373050940-8f19e9b858a9" },
-  { id: 12, name: "Ice Wizard", type: "Troop", rarity: "Legendary", elixir: 3, level: 5, count: 4, maxCount: 5, image: "https://images.pexels.com/photos/7979099/pexels-photo-7979099.jpeg" },
-];
+
 
 // Deck Builder Screen
 export const DeckScreen = () => {
